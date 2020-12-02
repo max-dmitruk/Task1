@@ -44,9 +44,11 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Classes\Airbus.cs" />
+    <Compile Include="Classes\AirCompany.cs" />
     <Compile Include="Classes\Airplane.cs" />
     <Compile Include="Classes\Boeing.cs" />
     <Compile Include="Classes\Cargo.cs" />
+    <Compile Include="List,Interface\IAirCompany.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>

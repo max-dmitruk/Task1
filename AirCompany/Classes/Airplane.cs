@@ -22,5 +22,6 @@ namespace AirCompany.Classes
         }
         public abstract void Rise();
         public abstract void Landing();
+        public abstract void Load();
     }
 }
