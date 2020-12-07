@@ -7,14 +7,13 @@ using AirCompany.Classes;
 
 namespace AirCompany.List_Interface
 {
-    interface IAirCompany
+    interface IAirline
     {
-        IEnumerable <Airplane> plane { get;}
-        void Buy(Airplane Plane);
+        void Add(Airplane Plane);
         int PlaneCapacity();//вместимость
-        int PlaneTonnage();//грузоподъемность
         void SortDistance();//поиск по дальней дистанции
         IEnumerable<Airplane> FindPlaneByLevelFuel(double low, double high);// поиск по уровню топливу
-        void FindByLevelFuel(double low, double high);  //
+        void ShowPlane();
+        
     }
 }

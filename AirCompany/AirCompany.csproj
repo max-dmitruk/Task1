@@ -44,15 +44,16 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Classes\Airplane\PassengerPlane.cs" />
-    <Compile Include="Classes\Airline\AirCompany.cs" />
+    <Compile Include="Classes\Airline\Airline.cs" />
     <Compile Include="Classes\Airplane\Airplane.cs" />
     <Compile Include="Classes\Airplane\CargoPlane.cs" />
-    <Compile Include="List,Interface\IAirCompany.cs" />
+    <Compile Include="List,Interface\IAirline.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />
+    <None Include="ClassDiagram1.cd" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
