@@ -28,23 +28,32 @@ namespace AirCompany.Classes
         {
             return Airplanes.Sum(x => x.Capacity);
         }
+        public double PlaneTonnage()
+        {
+            return Airplanes.Sum(x => x.Tonnage);
+        }
 
         public void SortDistance()
         {
-            var result = Airplanes.OrderBy(x => x.Distance).ToList();
-            result.Clear();
+            var sortedPlane = from i in Airplanes orderby i.Distance select i;
+            foreach(Airplane i in sortedPlane)
+                Console.WriteLine(i.Name);   
+
+            /*var result = Airplanes.OrderBy(x => x.Distance).ToList();
+            //result.Clear();
             foreach (var i in result)
             {
                 Airplanes.Add(i);
-            }
+            }*/
         }
+
         public void ShowPlane()
         {
             Console.WriteLine("Список самолётов: ");
             foreach (var n in Airplanes)
             {
-                Console.WriteLine("Имя самолета: {0}, Количество топлива: {1}, Вместимость: {2}, Дистанция полета: {3}",
-                    n.Name, n.FuelVolume, n.Capacity,n.Distance);
+                Console.WriteLine("Имя самолета: {0}, Количество топлива: {1}, Грузоподъемность: {2}, Вместимость: {3}, Дистанция полета: {4},",
+                    n.Name, n.FuelVolume, n.Tonnage, n.Capacity, n.Distance);
             }
         }
     }

@@ -10,9 +10,10 @@ namespace AirCompany.List_Interface
     interface IAirline
     {
         void Add(Airplane Plane);
-        int PlaneCapacity();//вместимость
-        void SortDistance();//поиск по дальней дистанции
-        IEnumerable<Airplane> FindPlaneByLevelFuel(double low, double high);// поиск по уровню топливу
+        int PlaneCapacity();
+        double PlaneTonnage();
+        void SortDistance();
+        IEnumerable<Airplane> FindPlaneByLevelFuel(double low, double high);
         void ShowPlane();
         
     }

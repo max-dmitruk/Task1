@@ -8,11 +8,11 @@ namespace AirCompany.Classes
 {
     public class CargoPlane : Airplane
     {
-        public double Tonnage { get; private set; }
-        public CargoPlane(string name, double fuelvolume, int capacity, double tonnage, double distance)
-            : base(name, fuelvolume, capacity, distance)
+        public double WidthCargoHatch { get; private set; }
+        public CargoPlane(string name, double fuelvolume, double tonnage, int capacity, double distance, double widthCargoHatch)
+            : base(name, fuelvolume, tonnage, capacity, distance)
         {
-            Tonnage = tonnage;
+            WidthCargoHatch = widthCargoHatch;
         }
     }
 }
