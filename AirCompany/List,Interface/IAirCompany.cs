@@ -9,10 +9,12 @@ namespace AirCompany.List_Interface
 {
     interface IAirCompany
     {
-        IEnumerable <Airplane> Plane { get; set; }
+        IEnumerable <Airplane> plane { get;}
+        void Buy(Airplane Plane);
         int PlaneCapacity();//вместимость
         int PlaneTonnage();//грузоподъемность
         void SortDistance();//поиск по дальней дистанции
         IEnumerable<Airplane> FindPlaneByLevelFuel(double low, double high);// поиск по уровню топливу
+        void FindByLevelFuel(double low, double high);  //
     }
 }

@@ -6,7 +6,8 @@ using System.Threading.Tasks;
 
 namespace AirCompany.Classes
 {
-    public class Boeing : Airplane
+    public class CargoPlane : Airplane
     {
+        
     }
 }

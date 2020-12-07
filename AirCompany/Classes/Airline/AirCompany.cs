@@ -1,24 +1,34 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using AirCompany.List_Interface;
 
 namespace AirCompany.Classes
 {
-    class AirCompany : IAirCompany
+    public class AirCompany : IAirCompany
     {
-        public IEnumerable<Airplane> Plane { get => throw new NotImplementedException(); set => throw new NotImplementedException(); }
+        private ICollection<Airplane> airplanes;
 
-        public void Buy(Airplane planes)
+        public AirCompany()
+            {
+            airplanes = new List<Airplane>();
+            }   
+        public IEnumerable<Airplane> plane 
         {
-            throw new NotImplementedException();
+            get
+            {
+                return plane;
+            }
+        }
+
+        public void Buy(Airplane Plane)
+        {
+            airplanes.Add(Plane);   
         }
 
         public IEnumerable<Airplane> FindPlaneByLevelFuel(double low, double high)
         {
-            throw new NotImplementedException();
+            return plane.Where(x => (x.FuelVolume >= low) && (x.FuelVolume <= high)).ToList();
         }
 
         public int PlaneCapacity()
