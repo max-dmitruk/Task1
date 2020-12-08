@@ -11,7 +11,6 @@ namespace AirCompany.Classes
         private double weightOfCargo;
         public double WeightOfCargo 
         {
-
             get
             {
                 return weightOfCargo;
@@ -26,7 +25,6 @@ namespace AirCompany.Classes
                 {
                     weightOfCargo = value;
                 }
-
             }
         }
 
@@ -37,8 +35,8 @@ namespace AirCompany.Classes
         }
 
         public override void FuelCompsution()
-        {
-            throw new NotImplementedException();
-        }
+       {
+          throw new NotImplementedException();
+       }
     }
 }

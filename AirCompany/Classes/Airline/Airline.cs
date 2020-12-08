@@ -65,5 +65,12 @@ namespace AirCompany.Classes
                     n.Name, n.FuelVolume, n.Tonnage, n.Capacity, n.Distance);
             }
         }
+        public void FuelOfCompsution()
+        {
+            foreach(var i in Airplanes)
+            {
+                i.FuelCompsution();
+            }
+        }
     }
 }

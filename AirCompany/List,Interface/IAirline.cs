@@ -15,6 +15,7 @@ namespace AirCompany.List_Interface
         void SortDistance();
         IEnumerable<Airplane> FindPlaneByLevelFuel(double low, double high);
         void ShowPlane();
+        void FuelOfCompsution();
         
     }
 }

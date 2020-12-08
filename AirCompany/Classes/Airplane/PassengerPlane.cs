@@ -1,8 +1,10 @@
-﻿using System;
+﻿using AirCompany.List_Interface;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+
 
 namespace AirCompany.Classes
 {
@@ -25,7 +27,6 @@ namespace AirCompany.Classes
                 {
                     numberOfPassengers = value;
                 }
-                
             }
         }
 
@@ -37,7 +38,8 @@ namespace AirCompany.Classes
 
         public override void FuelCompsution()
         {
-            throw new NotImplementedException();
+          double Compsution;
+        Compsution = (FuelVolume * numberOfPassengers) / Distance; 
         }
     }
 }

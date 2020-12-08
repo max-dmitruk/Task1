@@ -31,6 +31,8 @@ namespace AirCompany
             company.SortDistance();
             company.ShowPlane();
 
+            //company.FuelOfCompsution();
+
             Console.WriteLine();
 
             Console.WriteLine("Общая вместимость: {0} человек", company.PlaneCapacity());

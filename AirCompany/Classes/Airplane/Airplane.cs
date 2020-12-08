@@ -1,4 +1,5 @@
-﻿using System;
+﻿using AirCompany.List_Interface;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -22,6 +23,7 @@ namespace AirCompany.Classes
             Tonnage = tonnage;
             Distance = distance;
         }
+        
         public abstract void FuelCompsution();
     }
 }
