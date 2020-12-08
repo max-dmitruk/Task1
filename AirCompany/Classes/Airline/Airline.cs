@@ -7,12 +7,12 @@ namespace AirCompany.Classes
 {
     public class Airline : IAirline
     {
-        private ICollection<Airplane> Airplanes;
+        IList<Airplane> Airplanes = new List<Airplane>();
 
-        public Airline()
+        /*public Airline()
         {
-            Airplanes = new List<Airplane>();
-        }
+           Airplanes = new List<Airplane>();
+        }*/
 
         public void Add(Airplane Plane)
         {
@@ -35,10 +35,20 @@ namespace AirCompany.Classes
 
         public void SortDistance()
         {
-            var sortedPlane = from i in Airplanes orderby i.Distance select i;
-            foreach(Airplane i in sortedPlane)
-                Console.WriteLine(i.Name);   
+            var sortedPlane = Airplanes.OrderBy(x => x.Distance).ToList();
+            Airplanes.Clear();
+            foreach (var i in sortedPlane)
+            {
+                Airplanes.Add(i);
+            }
 
+            /*var sortedPlane = from i in Airplanes orderby i.Distance select i;
+            Airplanes.ToList();
+            Airplanes.Clear();
+            foreach (var i in sortedPlane)
+            {
+                Airplanes.Add(i);
+            }*/
             /*var result = Airplanes.OrderBy(x => x.Distance).ToList();
             //result.Clear();
             foreach (var i in result)
@@ -46,7 +56,6 @@ namespace AirCompany.Classes
                 Airplanes.Add(i);
             }*/
         }
-
         public void ShowPlane()
         {
             Console.WriteLine("Список самолётов: ");

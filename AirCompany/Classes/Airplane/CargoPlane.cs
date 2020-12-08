@@ -8,11 +8,37 @@ namespace AirCompany.Classes
 {
     public class CargoPlane : Airplane
     {
-        public double WidthCargoHatch { get; private set; }
-        public CargoPlane(string name, double fuelvolume, double tonnage, int capacity, double distance, double widthCargoHatch)
+        private double weightOfCargo;
+        public double WeightOfCargo 
+        {
+
+            get
+            {
+                return weightOfCargo;
+            }
+            set
+            {
+                if (value > Tonnage)
+                {
+                    Console.WriteLine("Перебор груза!!!");
+                }
+                else
+                {
+                    weightOfCargo = value;
+                }
+
+            }
+        }
+
+        public CargoPlane(string name, double fuelvolume, double tonnage, int capacity, double distance, double weightOfCargo)
             : base(name, fuelvolume, tonnage, capacity, distance)
         {
-            WidthCargoHatch = widthCargoHatch;
+            WeightOfCargo = weightOfCargo;
+        }
+
+        public override void FuelCompsution()
+        {
+            throw new NotImplementedException();
         }
     }
 }

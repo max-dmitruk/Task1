@@ -8,11 +8,36 @@ namespace AirCompany.Classes
 {
     public class PassengerPlane : Airplane
     {
-        public  int NumberOfSeats { get; private set; }
-        public PassengerPlane(string name, double fuelvolume,double tonnage, int capacity, double distance,int numberOfseats)
+        private int numberOfPassengers;
+        public  int NumberOfPassengers 
+        {
+            get
+            {
+                return numberOfPassengers;
+            }
+            set
+            {
+                if (value > Capacity)
+                {
+                    Console.WriteLine("Перебор пассажиров!!!");
+                }
+                else
+                {
+                    numberOfPassengers = value;
+                }
+                
+            }
+        }
+
+        public PassengerPlane(string name, double fuelvolume,double tonnage, int capacity, double distance,int numberOfPassengers)
             : base(name, fuelvolume, tonnage, capacity, distance)
         {
-            NumberOfSeats = numberOfseats;
+            NumberOfPassengers = numberOfPassengers;
+        }
+
+        public override void FuelCompsution()
+        {
+            throw new NotImplementedException();
         }
     }
 }

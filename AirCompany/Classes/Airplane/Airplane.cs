@@ -22,5 +22,6 @@ namespace AirCompany.Classes
             Tonnage = tonnage;
             Distance = distance;
         }
+        public abstract void FuelCompsution();
     }
 }
