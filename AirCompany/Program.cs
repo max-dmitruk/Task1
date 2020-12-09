@@ -10,11 +10,12 @@ namespace AirCompany
         static void Main(string[] args)
         {
             IList<Airplane> airPlanes = new List<Airplane>();
-            airPlanes.Add(new CargoPlane("грузовой0", 100.0, 1000.0, 8, 11200.0, 1100.0));
-            airPlanes.Add(new CargoPlane("грузовой1", 65.0, 900.0, 4, 9600.0, 910.0));
-            airPlanes.Add(new PassengerPlane("пассажирский0", 70.0, 600.0, 66, 10500.0, 67));
-            airPlanes.Add(new PassengerPlane("пассажирский1", 45.0, 450.0, 40, 5500.0, 34));
+            airPlanes.Add(new CargoPlane("грузовой0", 100.0, 1000.0, 8, 11200.0, 500.0));
+            airPlanes.Add(new CargoPlane("грузовой1", 650.0, 900.0, 4, 9600.0, 500.0));
+            airPlanes.Add(new PassengerPlane("пассажирский0", 250, 600.0, 100, 10500.0, 67));
+            airPlanes.Add(new PassengerPlane("пассажирский1", 450.0, 450.0, 40, 5500.0, 34));
 
+            
             //Airplane[] airPlanes = new Airplane [4];
             //airPlanes[0] = new CargoPlane ("грузовой0", 100.0, 1000.0, 8, 11200.0, 30.8);
             //airPlanes[1] = new CargoPlane("грузовой1", 65.0, 900.0, 4, 9600.0, 15.4);
@@ -30,8 +31,8 @@ namespace AirCompany
             
             company.SortDistance();
             company.ShowPlane();
-
-            //company.FuelOfCompsution();
+            
+            company.FuelOfCompsution(); 
 
             Console.WriteLine();
 

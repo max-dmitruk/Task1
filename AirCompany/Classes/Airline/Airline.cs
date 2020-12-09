@@ -5,7 +5,7 @@ using AirCompany.List_Interface;
 
 namespace AirCompany.Classes
 {
-    public class Airline : IAirline
+    public class Airline : IAirline,ISortDistance,IShow,IPlaneCapacity,IPlaneTonnage,IFuelOfCompsution
     {
         IList<Airplane> Airplanes = new List<Airplane>();
 
@@ -18,10 +18,10 @@ namespace AirCompany.Classes
         {
             Airplanes.Add(Plane);
         }
-
+        
         public IEnumerable<Airplane> FindPlaneByLevelFuel(double low, double high)
         {
-            return Airplanes.Where(x => (x.FuelVolume >= low) && (x.FuelVolume <= high)).ToList();
+            return Airplanes.Where(x => (x.FuelVolume>= low) && (x.FuelVolume <= high)).ToList();
         }
 
         public int PlaneCapacity()

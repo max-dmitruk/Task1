@@ -9,7 +9,7 @@ namespace AirCompany.Classes
     public class CargoPlane : Airplane
     {
         private double weightOfCargo;
-        public double WeightOfCargo 
+        public double WeightOfCargo
         {
             get
             {
@@ -20,6 +20,7 @@ namespace AirCompany.Classes
                 if (value > Tonnage)
                 {
                     Console.WriteLine("Перебор груза!!!");
+                    weightOfCargo = 0;
                 }
                 else
                 {
@@ -35,8 +36,10 @@ namespace AirCompany.Classes
         }
 
         public override void FuelCompsution()
-       {
-          throw new NotImplementedException();
-       }
+        {
+            double Compsution;
+            Compsution = (FuelVolume * weightOfCargo) / Distance;
+            Console.WriteLine("Расход топлива грузового самолета  {0} с весом {1}", Compsution, weightOfCargo);
+        }
     }
 }

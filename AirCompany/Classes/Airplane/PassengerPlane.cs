@@ -1,17 +1,11 @@
-﻿using AirCompany.List_Interface;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-
+﻿using System;
 
 namespace AirCompany.Classes
 {
     public class PassengerPlane : Airplane
     {
         private int numberOfPassengers;
-        public  int NumberOfPassengers 
+        public int NumberOfPassengers
         {
             get
             {
@@ -22,6 +16,7 @@ namespace AirCompany.Classes
                 if (value > Capacity)
                 {
                     Console.WriteLine("Перебор пассажиров!!!");
+                    numberOfPassengers = 0;
                 }
                 else
                 {
@@ -30,7 +25,7 @@ namespace AirCompany.Classes
             }
         }
 
-        public PassengerPlane(string name, double fuelvolume,double tonnage, int capacity, double distance,int numberOfPassengers)
+        public PassengerPlane(string name, double fuelvolume, double tonnage, int capacity, double distance, int numberOfPassengers)
             : base(name, fuelvolume, tonnage, capacity, distance)
         {
             NumberOfPassengers = numberOfPassengers;
@@ -38,8 +33,10 @@ namespace AirCompany.Classes
 
         public override void FuelCompsution()
         {
-          double Compsution;
-        Compsution = (FuelVolume * numberOfPassengers) / Distance; 
+            double Compsution;
+            Compsution = (FuelVolume * numberOfPassengers) / Distance;
+            Console.WriteLine("Расход топлива пассажирского самолета  {0} с людьми {1}", Compsution, numberOfPassengers);
         }
+
     }
 }

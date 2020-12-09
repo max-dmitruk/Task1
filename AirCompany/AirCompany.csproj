@@ -48,7 +48,11 @@
     <Compile Include="Classes\Airplane\Airplane.cs" />
     <Compile Include="Classes\Airplane\CargoPlane.cs" />
     <Compile Include="List,Interface\IAirline.cs" />
-    <Compile Include="List,Interface\IAirPlane.cs" />
+    <Compile Include="List,Interface\IFuelOfCompsution.cs" />
+    <Compile Include="List,Interface\IPlaneCapacity.cs" />
+    <Compile Include="List,Interface\IPlaneTonnage.cs" />
+    <Compile Include="List,Interface\IShow.cs" />
+    <Compile Include="List,Interface\ISortDistance.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
