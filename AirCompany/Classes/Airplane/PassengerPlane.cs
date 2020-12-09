@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Collections.Generic;
 
 namespace AirCompany.Classes
 {
@@ -38,5 +39,10 @@ namespace AirCompany.Classes
             Console.WriteLine("Расход топлива пассажирского самолета  {0} с людьми {1}", Compsution, numberOfPassengers);
         }
 
+        public override void ShowPlane()
+        {
+         Console.WriteLine("Имя самолета: {0}, Количество топлива: {1}, Грузоподъемность: {2}, Вместимость: {3}, Дистанция полета: {4}," +
+         " Количество пасадочных мест: {5}",Name, FuelVolume, Tonnage, Capacity, Distance,NumberOfPassengers);
+        }
     }
 }
