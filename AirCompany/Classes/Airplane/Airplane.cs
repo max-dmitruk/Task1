@@ -25,6 +25,7 @@ namespace AirCompany.Classes
         }
         
         public abstract double FuelCompsution();
+
         public abstract void ShowPlane();
     }
 }

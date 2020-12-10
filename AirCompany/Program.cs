@@ -34,13 +34,18 @@ namespace AirCompany
 
 
             Console.WriteLine("Список самолётов по дистанции:");
-            foreach (var n in company.SortDistance())
+            foreach (var n in company.SortDistanceDec())
+            {
+                Console.WriteLine("Название самолета: {0}, расстояние: {1}", n.Name, n.Distance);
+            }
+            Console.WriteLine("Список самолётов по дистанции:");
+            foreach (var n in company.SortDistanceInc())
             {
                 Console.WriteLine("Название самолета: {0}, расстояние: {1}", n.Name, n.Distance);
             }
             Console.WriteLine();
 
-            Console.WriteLine("Общая вместимость: {0} человек", company.PlaneCapacity());
+            Console.WriteLine("Общая вместимость: {0} человек(а)", company.PlaneCapacity());
             Console.WriteLine("Общая грузоподъемность: {0} тонн", company.PlaneTonnage());
 
             Console.WriteLine();

@@ -1,4 +1,5 @@
-﻿using System;
+﻿using AirCompany.List_Interface;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -42,8 +43,8 @@ namespace AirCompany.Classes
 
         public override void ShowPlane()
         {
-            Console.WriteLine("Имя самолета: {0}, Количество топлива: {1}, Грузоподъемность: {2}, Вместимость: {3}, Дистанция полета: {4}," +
-            " Вес перевозимого груза: {5}", Name, FuelVolume, Tonnage, Capacity, Distance, WeightOfCargo);
+           Console.WriteLine("Имя самолета: {0}, Количество топлива: {1}, Грузоподъемность: {2}, Вместимость: {3}, Дистанция полета: {4}," +
+           " Вес перевозимого груза: {5}", Name, FuelVolume, Tonnage, Capacity, Distance, WeightOfCargo);
         }
 
     }

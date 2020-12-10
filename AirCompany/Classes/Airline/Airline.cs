@@ -38,7 +38,12 @@ namespace AirCompany.Classes
             return airplanes.Sum(x => x.Tonnage);
         }
 
-        public IEnumerable<Airplane> SortDistance()
+        public IEnumerable<Airplane> SortDistanceDec()
+        {
+            return airplanes.OrderByDescending(x => x.Distance).ToList();
+        }
+
+        public IEnumerable<Airplane> SortDistanceInc()
         {
             return airplanes.OrderBy(x => x.Distance).ToList();
         }
