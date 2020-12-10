@@ -1,9 +1,4 @@
-﻿using AirCompany.List_Interface;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+﻿using System;
 
 namespace AirCompany.Classes
 {
@@ -38,14 +33,13 @@ namespace AirCompany.Classes
 
         public override double FuelCompsution()
         {
-            return FuelVolume * WeightOfCargo / Distance;
+            return (FuelVolume * WeightOfCargo) / Distance;
         }
 
         public override void ShowPlane()
         {
-           Console.WriteLine("Имя самолета: {0}, Количество топлива: {1}, Грузоподъемность: {2}, Вместимость: {3}, Дистанция полета: {4}," +
-           " Вес перевозимого груза: {5}", Name, FuelVolume, Tonnage, Capacity, Distance, WeightOfCargo);
+           Console.WriteLine("\n Имя самолета: {0}  \n Количество топлива: {1} л \n Грузоподъемность: {2} кг\n Вместимость груза: {3} кг \n Дистанция полета: {4} км" +
+           " \n Вес перевозимого груза: {5} кг",Name, FuelVolume, Tonnage, Capacity, Distance, WeightOfCargo);
         }
-
     }
 }

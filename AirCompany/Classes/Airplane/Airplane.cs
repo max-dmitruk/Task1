@@ -1,11 +1,4 @@
-﻿using AirCompany.List_Interface;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-
-namespace AirCompany.Classes
+﻿namespace AirCompany.Classes
 {
     public abstract class Airplane 
     {

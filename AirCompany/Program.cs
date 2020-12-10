@@ -1,5 +1,4 @@
 ﻿using AirCompany.Classes;
-using AirCompany.List_Interface;
 using System;
 using System.Collections.Generic;
 
@@ -11,52 +10,44 @@ namespace AirCompany
         {
             IList<Airplane> plane = new List<Airplane>()
             {
-            new CargoPlane("грузовой0", 100.0, 1000.0, 8, 11200.0, 500.0),
-            new CargoPlane("грузовой1", 650.0, 900.0, 4, 9600.0, 500.0),
-            new PassengerPlane("пассажирский0", 250, 600.0, 100, 10500.0, 67),
-            new PassengerPlane("пассажирский1", 450.0, 450.0, 40, 5500.0, 34)
+            new CargoPlane("АН-124", 32500.0, 17300.0, 8, 9000.0, 1000.0),
+            new CargoPlane("АН-225", 25000.0, 15000.0, 8, 10000.0, 3000.0),
+            new PassengerPlane("Airbus A-380", 4250.0, 6000.0, 450, 10500.0, 398),
+            new PassengerPlane("Boeing 747", 4700.0, 4500.0, 756, 7500.0, 743)
             };
 
             Airline company = new Airline(plane);
 
-            //Airplane[] airPlanes = new Airplane [4];
-            //airPlanes[0] = new CargoPlane ("грузовой0", 100.0, 1000.0, 8, 11200.0, 30.8);
-            //airPlanes[1] = new CargoPlane("грузовой1", 65.0, 900.0, 4, 9600.0, 15.4);
-            //airPlanes[2] = new PassengerPlane("пассажирский0", 70.0,600.0, 5, 10500.0, 67);
-            //airPlanes[3] = new PassengerPlane("пассажирский1", 45.0, 450.0, 2, 5500.0, 34);
-
-            //foreach (Airplane i in plane)
-            //{
-            //company.Add(i);
-            //}
             company.ShowPlane();
-            Console.WriteLine();
+            Console.WriteLine("\n--------------------------------------------------------------");
 
-
-            Console.WriteLine("Список самолётов по дистанции:");
+            Console.WriteLine("Список самолётов по дистанции (убывание):");
             foreach (var n in company.SortDistanceDec())
             {
-                Console.WriteLine("Название самолета: {0}, расстояние: {1}", n.Name, n.Distance);
+                Console.WriteLine("Название самолета: {0}; Расстояние: {1} км", n.Name, n.Distance);
             }
-            Console.WriteLine("Список самолётов по дистанции:");
+
+            Console.WriteLine();
+
+            Console.WriteLine("Список самолётов по дистанции (возрастание):");
             foreach (var n in company.SortDistanceInc())
             {
-                Console.WriteLine("Название самолета: {0}, расстояние: {1}", n.Name, n.Distance);
+                Console.WriteLine("Название самолета: {0}; Расстояние: {1} км", n.Name, n.Distance);
             }
-            Console.WriteLine();
+            Console.WriteLine("\n--------------------------------------------------------------");
 
-            Console.WriteLine("Общая вместимость: {0} человек(а)", company.PlaneCapacity());
-            Console.WriteLine("Общая грузоподъемность: {0} тонн", company.PlaneTonnage());
+            Console.WriteLine("Общая пассажировместимость: {0} человек(а)", company.PlaneCapacity());
+            Console.WriteLine("Общая грузоподъемность: {0} кг", company.PlaneTonnage());
 
-            Console.WriteLine();
+            Console.WriteLine("\n--------------------------------------------------------------");
 
             Console.WriteLine("Список самолётов по расходу топлива:");
-            foreach (var n in company.FindPlaneByLevelFuel(20, 80))
+            foreach (var n in company.FindPlaneByLevelFuel(0, 500000))
             {
-              Console.WriteLine("Название самолета: {0}, Топливо: {1}", n.Name, n.FuelCompsution());
+              Console.WriteLine("Название самолета: {0}; Топливо: {1} л", n.Name, n.FuelCompsution());
             }
-            
             Console.ReadLine();
         }
     }
 }
+
