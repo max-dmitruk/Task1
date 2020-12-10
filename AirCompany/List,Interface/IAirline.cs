@@ -7,5 +7,6 @@ namespace AirCompany.List_Interface
     {
         void Add(Airplane Plane);
         IEnumerable<Airplane> FindPlaneByLevelFuel(double low, double high);
+
     }
 }

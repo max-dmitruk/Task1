@@ -1,4 +1,5 @@
-﻿using System;
+﻿using AirCompany.List_Interface;
+using System;
 using System.Collections.Generic;
 
 namespace AirCompany.Classes
@@ -32,11 +33,9 @@ namespace AirCompany.Classes
             NumberOfPassengers = numberOfPassengers;
         }
 
-        public override void FuelCompsution()
+        public override double FuelCompsution()
         {
-            double Compsution;
-            Compsution = (FuelVolume * numberOfPassengers) / Distance;
-            Console.WriteLine("Расход топлива пассажирского самолета  {0} с людьми {1}", Compsution, numberOfPassengers);
+            return FuelVolume * NumberOfPassengers / Distance;
         }
 
         public override void ShowPlane()

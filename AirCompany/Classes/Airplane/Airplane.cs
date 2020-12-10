@@ -7,7 +7,7 @@ using System.Threading.Tasks;
 
 namespace AirCompany.Classes
 {
-    public abstract class Airplane
+    public abstract class Airplane 
     {
         public string Name { get; private set; }
         public double FuelVolume { get; private set; }
@@ -24,7 +24,7 @@ namespace AirCompany.Classes
             Distance = distance;
         }
         
-        public abstract void FuelCompsution();
+        public abstract double FuelCompsution();
         public abstract void ShowPlane();
     }
 }

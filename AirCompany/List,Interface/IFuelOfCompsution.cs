@@ -2,6 +2,6 @@
 {
     public interface IFuelOfCompsution
     {
-        void FuelOfCompsution();
+        double FuelOfCompsution();
     }
 }

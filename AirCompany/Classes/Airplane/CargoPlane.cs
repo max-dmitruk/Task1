@@ -35,16 +35,16 @@ namespace AirCompany.Classes
             WeightOfCargo = weightOfCargo;
         }
 
-        public override void FuelCompsution()
+        public override double FuelCompsution()
         {
-            double Compsution;
-            Compsution = (FuelVolume * weightOfCargo) / Distance;
-            Console.WriteLine("Расход топлива грузового самолета  {0} с весом {1}", Compsution, weightOfCargo);
+            return FuelVolume * WeightOfCargo / Distance;
         }
+
         public override void ShowPlane()
         {
             Console.WriteLine("Имя самолета: {0}, Количество топлива: {1}, Грузоподъемность: {2}, Вместимость: {3}, Дистанция полета: {4}," +
             " Вес перевозимого груза: {5}", Name, FuelVolume, Tonnage, Capacity, Distance, WeightOfCargo);
         }
+
     }
 }

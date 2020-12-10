@@ -5,57 +5,59 @@ using AirCompany.List_Interface;
 
 namespace AirCompany.Classes
 {
-    public class Airline : IAirline,ISortDistance,IShow,IPlaneCapacity,IPlaneTonnage,IFuelOfCompsution
+    public class Airline : IAirline,ISortDistance,IShow,IPlaneCapacity,IPlaneTonnage
     {
-        IList<Airplane> Airplanes = new List<Airplane>();
+        private ICollection<Airplane> airplanes;
 
-        public void Add(Airplane Plane)
+        public Airline(ICollection<Airplane> Airplanes)
         {
-            Airplanes.Add(Plane);
+            airplanes = Airplanes;
         }
         
+        public void Add(Airplane item)
+        {
+            airplanes.Add(item);
+        }
+
         public IEnumerable<Airplane> FindPlaneByLevelFuel(double low, double high)
         {
-            return Airplanes.Where(x => (x.FuelVolume>= low) && (x.FuelVolume <= high)).ToList();
+           var FindPlane = from item in airplanes
+                       let i = item.FuelCompsution()
+                       where (i >= low && i <= high)
+                       select item;
+           return FindPlane;
         }
 
         public int PlaneCapacity()
         {
-            return Airplanes.Sum(x => x.Capacity);
+            return airplanes.Sum(x => x.Capacity);
         }
+
         public double PlaneTonnage()
         {
-            return Airplanes.Sum(x => x.Tonnage);
+            return airplanes.Sum(x => x.Tonnage);
         }
 
-        public void SortDistance()
+        public IEnumerable<Airplane> SortDistance()
         {
-            var sortedPlane = Airplanes.OrderBy(x => x.Distance).ToList();
-            Airplanes.Clear();
+            return airplanes.OrderBy(x => x.Distance).ToList();
+        }
+        /*public void SortDistance()
+        {
+            var sortedPlane = airplanes.OrderBy(x => x.Distance).ToList();
+            airplanes.Clear();
             foreach (var i in sortedPlane)
             {
-                Airplanes.Add(i);
+                airplanes.Add(i);
             }
+        }*/
 
-        }
         public void ShowPlane()
         {
-            foreach (var i in Airplanes)
+            Console.WriteLine("Список самолётов: ");
+            foreach (var i in airplanes)
             {
                 i.ShowPlane();
-            }
-            /*Console.WriteLine("Список самолётов: ");
-            foreach (var n in Airplanes)
-            {
-                Console.WriteLine("Имя самолета: {0}, Количество топлива: {1}, Грузоподъемность: {2}, Вместимость: {3}, Дистанция полета: {4},",
-                    n.Name, n.FuelVolume, n.Tonnage, n.Capacity, n.Distance);
-            }*/
-        }
-        public void FuelOfCompsution()
-        {
-            foreach(var i in Airplanes)
-            {
-                i.FuelCompsution();
             }
         }
     }

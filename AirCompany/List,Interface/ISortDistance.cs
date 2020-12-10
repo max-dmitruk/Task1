@@ -1,7 +1,10 @@
-﻿namespace AirCompany.List_Interface
+﻿using AirCompany.Classes;
+using System.Collections.Generic;
+
+namespace AirCompany.List_Interface
 {
     public interface ISortDistance
     {
-        void SortDistance();
+        IEnumerable<Airplane> SortDistance();
     }
 }
