@@ -47,18 +47,17 @@
     <Compile Include="Classes\Airline\Airline.cs" />
     <Compile Include="Classes\Airplane\Airplane.cs" />
     <Compile Include="Classes\Airplane\CargoPlane.cs" />
-    <Compile Include="List,Interface\IAirline.cs" />
-    <Compile Include="List,Interface\IFuelOfCompsution.cs" />
-    <Compile Include="List,Interface\IPlaneCapacity.cs" />
-    <Compile Include="List,Interface\IPlaneTonnage.cs" />
-    <Compile Include="List,Interface\IShow.cs" />
-    <Compile Include="List,Interface\ISortDistance.cs" />
+    <Compile Include="Interfaces\IAirline.cs" />
+    <Compile Include="Interfaces\IFuelCompsution.cs" />
+    <Compile Include="Interfaces\IPlaneCapacity.cs" />
+    <Compile Include="Interfaces\IPlaneTonnage.cs" />
+    <Compile Include="Interfaces\IShow.cs" />
+    <Compile Include="Interfaces\ISortDistance.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />
-    <None Include="ClassDiagram1.cd" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

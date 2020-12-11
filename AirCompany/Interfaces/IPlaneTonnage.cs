@@ -2,6 +2,6 @@
 {
     public interface IPlaneTonnage
     {
-        double PlaneTonnage();
+        double GetPlaneTonnage();
     }
 }

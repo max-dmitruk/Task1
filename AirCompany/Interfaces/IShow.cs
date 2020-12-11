@@ -2,6 +2,6 @@
 {
     public interface IShow
     {
-        void ShowPlane();
+        void GetShowPlane();
     }
 }

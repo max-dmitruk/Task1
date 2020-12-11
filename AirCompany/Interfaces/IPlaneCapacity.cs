@@ -2,6 +2,6 @@
 {
     public interface IPlaneCapacity
     {
-        int PlaneCapacity();
+        int GetPlaneCapacity();
     }
 }

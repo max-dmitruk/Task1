@@ -26,17 +26,17 @@ namespace AirCompany.Classes
         }
 
         public CargoPlane(string name, double fuelvolume, double tonnage, int capacity, double distance, double weightOfCargo)
-            : base(name, fuelvolume, tonnage, capacity, distance)
+                          : base(name, fuelvolume, tonnage, capacity, distance)
         {
             WeightOfCargo = weightOfCargo;
         }
 
-        public override double FuelCompsution()
+        public override double GetFuelCompsution()
         {
             return (FuelVolume * WeightOfCargo) / Distance;
         }
 
-        public override void ShowPlane()
+        public override void GetShowPlane()
         {
            Console.WriteLine("\n Имя самолета: {0}  \n Количество топлива: {1} л \n Грузоподъемность: {2} кг\n Вместимость груза: {3} кг \n Дистанция полета: {4} км" +
            " \n Вес перевозимого груза: {5} кг",Name, FuelVolume, Tonnage, Capacity, Distance, WeightOfCargo);

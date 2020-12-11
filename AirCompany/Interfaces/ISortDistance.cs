@@ -5,7 +5,7 @@ namespace AirCompany.List_Interface
 {
     public interface ISortDistance
     {
-        IEnumerable<Airplane> SortDistanceDec();
-        IEnumerable<Airplane> SortDistanceInc();
+        IEnumerable<Airplane> GetSortDistanceDec();
+        IEnumerable<Airplane> GetSortDistanceInc();
     }
 }

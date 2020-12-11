@@ -22,38 +22,38 @@ namespace AirCompany.Classes
         public IEnumerable<Airplane> FindPlaneByLevelFuel(double low, double high)
         {
            var FindPlane = from item in aircompany
-                           let i = item.FuelCompsution()
+                           let i = item.GetFuelCompsution()
                            where (i >= low && i <= high)
                            select item;
            return FindPlane;
         }
 
-        public int PlaneCapacity()
+        public int GetPlaneCapacity()
         {
             return aircompany.Sum(x => x.Capacity);
         }
 
-        public double PlaneTonnage()
+        public double GetPlaneTonnage()
         {
             return aircompany.Sum(x => x.Tonnage);
         }
 
-        public IEnumerable<Airplane> SortDistanceDec()
+        public IEnumerable<Airplane> GetSortDistanceDec()
         {
             return aircompany.OrderByDescending(x => x.Distance);
         }
 
-        public IEnumerable<Airplane> SortDistanceInc()
+        public IEnumerable<Airplane> GetSortDistanceInc()
         {
             return aircompany.OrderBy(x => x.Distance);
         }
         
-        public void ShowPlane()
+        public void GetShowPlane()
         {
             Console.WriteLine("Список самолётов: ");
             foreach (var i in aircompany)
             {
-                i.ShowPlane();
+                i.GetShowPlane();
             }
         }
     }

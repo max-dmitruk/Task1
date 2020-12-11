@@ -17,8 +17,8 @@
             Distance = distance;
         }
         
-        public abstract double FuelCompsution();
+        public abstract double GetFuelCompsution();
 
-        public abstract void ShowPlane();
+        public abstract void GetShowPlane();
     }
 }
